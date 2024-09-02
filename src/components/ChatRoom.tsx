@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 
 import { IoIosSend } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { Link, useLocation } from "react-router-dom"
+import { Link, LoaderFunction, redirect, useLocation } from "react-router-dom"
 import {
   Avatar,
   AvatarFallback,
@@ -30,6 +30,8 @@ let socket: any;
 
 function chatRoom() {
   const {search} = useLocation();
+  const userData = queryString.parse(search);
+
   const [message, setMessage] = useState<string>("");
   const [messages, setMessages] = useState<messageObj[]>([]);
   const [name, setName] = useState<string | (string | null)[] | null>("");
@@ -38,7 +40,6 @@ function chatRoom() {
 
   useEffect(() =>{
     socket = io(url);
-    const userData = queryString.parse(search);
     setName(userData.name);
 
     socket.emit("room", userData, (error: string) =>{
@@ -118,6 +119,14 @@ function chatRoom() {
       }   
     })
 
+    }, (error) =>{
+      if(error){
+        return toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "Error getting location. You have denied location permission!",
+        })
+      } 
     });
   }
 
@@ -141,7 +150,7 @@ function chatRoom() {
               <DropdownMenuTrigger asChild>
                 <Button variant="secondary" size="icon" className="rounded-full">
                   <Avatar>
-                    <AvatarImage src="/images/avatar.png" alt="@shadcn" />
+                    <AvatarImage src={`/images/${userData.icon}.png`} alt="@shadcn" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                   <span className="sr-only">Toggle user menu</span>
@@ -195,6 +204,19 @@ function chatRoom() {
       </div>
     </div>
   )
+}
+
+export const chatLoader: LoaderFunction = ({request}) =>{
+  const queryParams = new URL(request.url).searchParams;
+  const name = queryParams.get("name");
+  const room = queryParams.get("room");
+  const icon = queryParams.get("icon");
+
+  if(!name || !room || !icon){
+    return redirect("/");
+  }
+
+  return null;
 }
 
 export default chatRoom;

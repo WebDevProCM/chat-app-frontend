@@ -8,14 +8,15 @@ export type messageObj = {
   message: string,
   username?: string,
   time?: string,
-  date?: string
+  date?: string,
+  icon? : string
 }
 
 function MessageBar({align, msg} : {align: string, msg: messageObj}) {
   return (
     <section className={`flex items-start w-full gap-2 ${align} mb-2`}>
       <Avatar>
-        <AvatarImage src="/images/avatar.png" alt="@shadcn" />
+        <AvatarImage src={`/images/${msg.icon}.png`} alt="@shadcn" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 

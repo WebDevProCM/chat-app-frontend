@@ -12,7 +12,8 @@ export type sideBarType = {
   id: string,
   username: string,
   room: string,
-  time: string
+  time: string,
+  icon: string
 }
 
 export function SideBarLg({data}: {data: sideBarType[]}) {
@@ -30,7 +31,7 @@ export function SideBarLg({data}: {data: sideBarType[]}) {
             return (
             <div key={user.id} className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary">
               <Avatar>
-                <AvatarImage src="/images/avatar.png" alt="@shadcn" />
+                <AvatarImage src={`/images/${user.icon}.png`} alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <p className="font-bold text-lg">{user.username}</p>
@@ -68,7 +69,7 @@ export function SideBarSm({data}: {data: sideBarType[]}) {
             return (
             <div key={user.id} className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary">
               <Avatar>
-                <AvatarImage src="/images/avatar.png" alt="@shadcn" />
+                <AvatarImage src={`/images/${user.icon}.png`} alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <p className="font-bold text-lg">{user.username}</p>

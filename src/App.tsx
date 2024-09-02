@@ -1,14 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
-import ChatRoom from './components/ChatRoom'
+import ChatRoom, { chatLoader } from './components/ChatRoom'
 import { ThemeProvider } from './components/theme-provider'
 import { Toaster } from "@/components/ui/toaster"
+import ErrorPage from './components/ErrorPage'
 
 function App() {
   const router = createBrowserRouter([
-    {path: "/", element: <Home />},
-    {path: "/chat", element: <ChatRoom />}
+    {path: "/", element: <Home />, errorElement: <ErrorPage />},
+    {path: "/chat", element: <ChatRoom/>, loader: chatLoader, errorElement: <ErrorPage />}
   ])
 
   return (
