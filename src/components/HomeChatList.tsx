@@ -12,7 +12,7 @@ interface Item {
 let notifications = [
   {
     name: "Garfield",
-    description: "Where is my lasgna?",
+    description: "Where is my lasagna?",
     time: "15m ago",
 
     icon: "💸",

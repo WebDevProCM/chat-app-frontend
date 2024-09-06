@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# Chat App
+This is a chat app built using ReactJs, expressJs and Socket.io. User can Create/Join a chat room just using a username and ID of the chat room by selecting a icon.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Several chat rooms can be created at the same time and a user can leave one chat room and join another chat room at the same time**
 
-Currently, two official plugins are available:
+![Home](images/Home.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Chat Room
+Each chat room can have a user with a unique username that is not similar to another user's username.
 
-## Expanding the ESLint configuration
+When a new user joins and leaves the chat room, it indicates to the remaining users in the chat room.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Users can see who is in the chat room with the sidebar on the left and also **each user can share their location to others.**
 
-- Configure the top-level `parserOptions` property like this:
+![Chat](images/Chat.png)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Theme
+User can change to light or dark mode.
+![Theme](images/Theme.PNG)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+TECHNOLOGIES USED:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**Socket.io, ReactJs, JavaScript, ShadcnUi/MagicUi, ExpressJs**
