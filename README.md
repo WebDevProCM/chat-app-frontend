@@ -16,7 +16,7 @@ Users can see who is in the chat room with the sidebar on the left and also **ea
 
 ## Theme
 User can change to light or dark mode.
-![Theme](images/Theme.PNG)
+![Theme](images/Theme.png)
 
 TECHNOLOGIES USED:
 
