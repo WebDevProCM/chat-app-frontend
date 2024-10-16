@@ -25,8 +25,9 @@ import { useToast } from "@/hooks/use-toast"
 import { io } from 'socket.io-client';
 
 // let socket: any;
-const url: string = "http://localhost:3000";
+const url: string | undefined = import.meta.env.VITE_BACKEND;
 let socket: any;
+console.log(import.meta.env.VITE_BACKEND)
 
 function chatRoom() {
   const {search} = useLocation();

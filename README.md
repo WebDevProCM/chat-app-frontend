@@ -1,5 +1,6 @@
 # Chat App
-This is a chat app built using ReactJs, expressJs and Socket.io. User can Create/Join a chat room just using a username and ID of the chat room by selecting a icon.
+Developed a dynamic real-time chat application using Socket.io for efficient communication. Leverages React.js on the front-end for a user-friendly interface and Node.js with Express.js on the back-end for robust server-side functionality.
+User can Create/Join a chat room just using username and ID of the chat room by selecting profile icon.
 
 **Several chat rooms can be created at the same time and a user can leave one chat room and join another chat room at the same time**
 
