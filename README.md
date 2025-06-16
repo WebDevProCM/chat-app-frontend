@@ -1,24 +1,49 @@
-# Chat App
-Developed a dynamic real-time chat application using Socket.io for efficient communication. Leverages React.js on the front-end for a user-friendly interface and Node.js with Express.js on the back-end for robust server-side functionality.
-User can Create/Join a chat room just using username and ID of the chat room by selecting profile icon.
+# 💬 Real-Time Chat App
+A **real-time chat application** built to showcase my skills with Socket.io and React.js. This app demonstrates core real-time communication features, such as joining rooms, sending messages, and sharing location — all handled locally without a database.
 
-**Several chat rooms can be created at the same time and a user can leave one chat room and join another chat room at the same time**
+# ✨ Technologies
+- Socket.io
+- React.js
+- Express.js
+- Typescript
+- Shadcn UI / Magic UI
 
+# 🚀 Features
+## 🧑‍🤝‍🧑 Create & Join Chat Rooms
+- Join or create chat rooms using a username and room ID
+- Multiple chat rooms can exist simultaneously
+- Users can switch between rooms at any time
+- Real-time entry/exit notifications for all participants
 ![Home](images/home1.png)
 
-## Chat Room
-Each chat room can have a user with a unique username that is not similar to another user's username.
-
-When a new user joins and leaves the chat room, it indicates to the remaining users in the chat room.
-
-Users can see who is in the chat room with the sidebar on the left and also **each user can share their location to others.**
-
+## 💬 Real-Time Messaging
+- Real-time communication powered by Socket.io
+- Each user has a unique username within a chat room
+- View current room members in a live sidebar
+- Share your current location with others in the chat
 ![Chat](images/chat1.png)
 
-## Theme
-User can change to light or dark mode.
+## 🎨 Light & Dark Theme Toggle
+- Switch between light mode and dark mode for a personalized experience
 ![Theme](images/theme1.png)
 
-TECHNOLOGIES USED:
+# 📌 Highlights
+- Real-time location sharing
+- Real-time user presence notifications
+- Unique usernames per room enforced
+- Clean and modern UI with Shadcn UI / Magic UI
+- Fully responsive for different screen sizes
 
-**Socket.io, ReactJs, JavaScript, ShadcnUi/MagicUi, ExpressJs**
+# 🎯 Final Note
+This chat app is a lightweight but powerful example of real-time web communication using WebSockets. It's built to be fast, intuitive, and scalable, perfect for both personal use and as a foundational project to build more advanced messaging systems.
+
+# 🛠️ How to Run Locally
+1. Clone the Backend: **https://github.com/WebDevProCM/chat-app-backend**
+2. Install dependencies: npm install
+3. Start the server: node --env-file=.env index.js
+4. Clone this repository and then do step 2
+5. Start the development server: npm run dev
+6. Visit HTTP://localhost:5173 in your browser
+
+# 🍿 Video
+https://github.com/user-attachments/assets/dfe6c3b3-fe8d-4eba-b79e-fa625c099432
